@@ -1,0 +1,17 @@
+{
+  "name": "ngcontactmep",
+  "version": "1.0.0",
+  "homepage": "https://github.com/contactmep/ngcontactmep#readme",
+  "authors": [
+    "adoptanoob & belgac"
+  ],
+  "description": "An app to contact your MePs on issues you care about!",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "ngcontactmep",
+  "version": "1.0.0",
+  "description": "An app to contact your MePs on issues you care about!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/contactmep/ngcontactmep.git"
+  },
+  "author": "adoptanoob & belgac",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/contactmep/ngcontactmep/issues"
+  },
+  "homepage": "https://github.com/contactmep/ngcontactmep#readme",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "gulp": "^3.9.0",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.0"
+  }
+}
