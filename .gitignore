@@ -2,5 +2,4 @@ node_modules
 npm-debug.log
 jshint-output.log
 bower_components
-app/dev
-app/dist
+app
