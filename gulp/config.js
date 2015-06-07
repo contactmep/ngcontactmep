@@ -49,6 +49,12 @@ module.exports = {
         src: templateGlob,
         dest: appDev + assetsDir + localjsDir
       }
+    },
+    dist:{
+      templates:{
+        src: appDev + assetsDir + localjsDir + recursiveGlob + '.html',
+        dest: app + assetsDir + localjsDir
+      }
     }
   },
   usemin:{
