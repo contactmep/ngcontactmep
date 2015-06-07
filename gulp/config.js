@@ -25,7 +25,10 @@ module.exports = {
   delete:{
     dev:{
       src: appDev + fileGlob
-    }
+    },
+   dist:{
+      src: ['./app/*','!./app/dev','!./app/test.html']
+    } 
   },
   bower:{
     buildDest: appDev + bower,
