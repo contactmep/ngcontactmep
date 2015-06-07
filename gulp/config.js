@@ -50,5 +50,9 @@ module.exports = {
         dest: appDev + assetsDir + localjsDir
       }
     }
+  },
+  usemin:{
+    src: appDev + '/index.html',
+    dest: app
   }
 }
