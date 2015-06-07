@@ -16,5 +16,9 @@ module.exports = {
     dev:{
       src: appDev + fileGlob
     }
+  },
+  bower:{
+    buildDest: appDev + '/bower_components',
+    updateDest: src + '/bower_components'
   }
 }
