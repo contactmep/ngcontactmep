@@ -1,0 +1,8 @@
+# use the default node container from Docker Hub
+box: wercker/nodejs
+
+# The steps that will be executed in the build pipeline
+build:
+  steps:
+    # A step that executes `npm install` command
+    - wercker/npm-install@0.9.3
