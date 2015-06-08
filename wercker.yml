@@ -1,5 +1,5 @@
 # use the default node container from Docker Hub
-box: wercker/nodejs@1.4.1
+box: node
 
 # The steps that will be executed in the build pipeline
 build:
