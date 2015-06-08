@@ -18,7 +18,7 @@ var appDev = app + dev;
 var assets = app + assetsDir;
 var localjs = src + assetsDir + localjsDir ;
 var localjsGlob = localjs + recursiveGlob + '.js';
-var templateGlob = localjs + recursiveGlob + '.html';
+var templateGlob = localjs + recursiveGlob + '.jade';
 
 //config object
 module.exports = {
@@ -43,10 +43,6 @@ module.exports = {
     dev:{
       localjs:{
         src: localjsGlob,
-        dest: appDev + assetsDir + localjsDir
-      },
-      templates:{
-        src: templateGlob,
         dest: appDev + assetsDir + localjsDir
       }
     },
@@ -76,5 +72,9 @@ module.exports = {
       port:3000,
       files:[app+recursiveGlob]
     }
+  },
+  jade:{
+    src: templateGlob,
+    dest: appDev + assetsDir + localjsDir
   }
 }
