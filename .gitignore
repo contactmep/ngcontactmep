@@ -3,3 +3,4 @@ npm-debug.log
 jshint-output.log
 bower_components
 app
+.publish/
