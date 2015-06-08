@@ -6,3 +6,4 @@ build:
   steps:
     # A step that executes `npm install` command
     - wercker/npm-install@0.9.3
+    - hgen/gulp
