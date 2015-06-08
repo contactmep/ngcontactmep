@@ -7,10 +7,10 @@ build:
     # A step that executes `npm install` command
     - wercker/npm-install@0.9.3
     - hgen/gulp
-  deploy :
-    steps :
-      - script:
-        name: Configure git
+deploy :
+  steps :
+    - script:
+      name: Configure git
         code: |-
           git config --global user.email "hans.scheuren@bizliner.com"
           git config --global user.name "belgac"
