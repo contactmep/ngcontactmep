@@ -1,0 +1,14 @@
+# use the default node container from Docker Hub
+box: node
+
+# The steps that will be executed in the build pipeline
+build:
+  steps:
+    # A step that executes `npm install` command
+    - wercker/npm-install@0.9.3
+    - hgen/gulp
+deploy:
+  steps:
+    - lukevivier/gh-pages:
+        token: $GIT_TOKEN
+        basedir: app
