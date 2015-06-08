@@ -68,6 +68,13 @@ module.exports = {
       },
       port:3000,
       files:[appDev+recursiveGlob]
+    },
+    dist:{
+      server: {
+        baseDir:[app]
+      },
+      port:3000,
+      files:[app+recursiveGlob]
     }
   }
 }
