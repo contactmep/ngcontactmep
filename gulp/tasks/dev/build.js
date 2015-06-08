@@ -6,7 +6,7 @@ gulp.task('build:dev', function(callback) {
   runSequence(
     'delete:dev',
     'bower',
-    ['inject','copy:dev'],
+    ['inject','copy:dev','jade'],
     callback
   );
 });

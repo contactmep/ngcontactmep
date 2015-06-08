@@ -1,14 +1,14 @@
 angular.module('ngContactMep',['ui.router','ngContactMep.homeController'])
-  .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlProvider){
+  .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
     $stateProvider
       .state('home',{
       url:'/',
       views:{
         main:{
-         templateUrl:'./home/home.view.html',
-         controller:'homeController',
-         controllerAs:'home' 
+         templateUrl:'./assets/localjs/home/home.view.html',
+         
         }
       } 
     });
+    $urlRouterProvider.otherwise('/');
   }]);
