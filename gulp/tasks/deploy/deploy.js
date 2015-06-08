@@ -5,7 +5,6 @@ gulp.task('deploy',function(callback){
   runsequence(
     'build:dist',
     'delete:dev',
-    'push-gh-pages',
     callback
   )
 })
