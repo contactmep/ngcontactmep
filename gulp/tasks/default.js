@@ -1,9 +1,9 @@
 var gulp = require('gulp');
 
 
-gulp.task('default', ['build:dist'], function(){
+gulp.task('default', ['deploy'], function(){
   console.log('Welcome to the gulp generator of ngcontactmep!');
-  console.log('The default tasks build the distribution version');
+  console.log('The default tasks deploys the distribution version');
   console.log('The other tasks are')
   console.log('- gulp serve:dev')
   console.log('    build the development version, serve it and watch the dev files for changes')
