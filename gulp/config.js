@@ -60,5 +60,14 @@ module.exports = {
   usemin:{
     src: appDev + '/index.html',
     dest: app
+  },
+  serve:{
+    dev:{
+      server: {
+        baseDir:[appDev]
+      },
+      port:3000,
+      files:[appDev+recursiveGlob]
+    }
   }
 }
