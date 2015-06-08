@@ -35,7 +35,7 @@ module.exports = {
     updateDest: src + bower
   },
   inject:{
-    src: src + '/index.html',
+    src: src + '/index.jade',
     dest : appDev,
     localjs: localjsGlob
   },
