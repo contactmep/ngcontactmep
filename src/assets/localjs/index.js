@@ -1,4 +1,4 @@
-angular.module('ngContactMep', ['ui.router', 'ngContactMep.homeController','ngContactMep.mepController','ngContactMep.mepsListController','ngContactMep.campaignController','ngContactMep.campaignsListController'])
+angular.module('ngContactMep', ['ui.router', 'ngMaterial', 'ngContactMep.homeController','ngContactMep.mepController','ngContactMep.mepsListController','ngContactMep.campaignController','ngContactMep.campaignsListController'])
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
