@@ -5,4 +5,6 @@ homeController.$inject = [];
 
 function homeController() {
   var vm = this;
+  vm.scopeConnected = true;
+  
 }
