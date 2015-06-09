@@ -4,14 +4,31 @@ var inject = require('gulp-inject');
 var angularFileSort = require('gulp-angular-filesort');
 var jade = require('gulp-jade');
 
-var config = require('../../config').inject;
+//PATH CONFIGURATION
+
+var pathConfig = require('../../config.json');
+
+var source = pathConfig.source 
+  + '/index' 
+  + pathConfig.templateExtension;
+
+var ngComponentJs = pathConfig.source 
+  + pathConfig.assets 
+  + pathConfig.ngComponents.dir 
+  + '/**/*' 
+  + pathConfig.scriptExtension;
+
+var destination = pathConfig.testBuild.dev;
+
+//TASK
 
 gulp.task('inject',function(){
   var bowersrc = bowerFiles();
 
-  return gulp.src(config.src)
+  return gulp.src(source)
   .pipe(jade({pretty: true}))
   .pipe(inject(gulp.src(bowersrc), {name: 'bower', relative: true}))
-  .pipe(inject(gulp.src(config.localjs).pipe(angularFileSort()), {relative: true}))
-  .pipe(gulp.dest(config.dest));
+  .pipe(inject(gulp.src(ngComponentJs)
+               .pipe(angularFileSort()), {relative: true}))
+  .pipe(gulp.dest(destination));
 })

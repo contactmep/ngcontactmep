@@ -1,10 +1,20 @@
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 
-var config = require('../../config').inject;
+//PATH CONFIG
+
+var pathConfig = require('../../config.json');
+
+var ngComponentJs = pathConfig.source 
+  + pathConfig.assets 
+  + pathConfig.ngComponents.dir 
+  + '/**/*' 
+  + pathConfig.scriptExtension;
+
+//TASK
 
 gulp.task('jslint', function() {
-  return gulp.src(config.localjs)
+  return gulp.src(ngComponentJs)
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('gulp-jshint-file-reporter', {filename:'./jshint-output.log'}));

@@ -1,0 +1,16 @@
+{
+  "source" : "./src",
+  "testBuild" : {
+    "dev" : "./app/dev",
+    "dist" : "./app"
+  },
+  "assets" : "/assets",
+  "ngComponents" : {
+    "dir" : "/localjs",
+    "renderTemplates" : ".view"
+  },
+  "bowerComponents" : "/bower_components",
+  "scriptExtension" : ".js",
+  "templateExtension" : ".jade"
+  
+}
