@@ -1,8 +1,10 @@
 var gulp   = require('gulp');
 var del    = require('del');
 
-var config = require('../../config').delete.dev;
+var pathConfig = require('../../config.json');
+
+var target = pathConfig.testBuild.dev + "/*"
 
 gulp.task('delete:dev', function(callback) {
-  del(config.src, callback);
+  del(target, callback);
 });
