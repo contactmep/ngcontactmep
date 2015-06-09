@@ -78,6 +78,12 @@ module.exports = {
     dest: appDev + assetsDir + localjsDir
   },
   watch: {
-    src: src + recursiveGlob
+    src: src + recursiveGlob,
+    copylocaljs:{
+      src: localjsGlob
+    },
+    jade:{
+      src: templateGlob
+    }
   }
 }
