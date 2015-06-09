@@ -76,5 +76,8 @@ module.exports = {
   jade:{
     src: templateGlob,
     dest: appDev + assetsDir + localjsDir
+  },
+  watch: {
+    src: src + recursiveGlob
   }
 }
