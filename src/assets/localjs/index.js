@@ -1,11 +1,13 @@
-angular.module('ngContactMep', ['ui.router', 'ngContactMep.homeController'])
+angular.module('ngContactMep', ['ui.router', 'ngContactMep.homeController','ngContactMep.mepController','ngContactMep.mepsListController','ngContactMep.campaignController','ngContactMep.campaignsListController'])
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
         url: '/',
         views: {
           main: {
-            templateUrl: './assets/localjs/home/home.view.html'
+            templateUrl: './assets/localjs/home/home.view.html',
+            controller:'homeController',
+            controllerAs:'home'
           }
         }
       })
@@ -21,7 +23,9 @@ angular.module('ngContactMep', ['ui.router', 'ngContactMep.homeController'])
         url: '/meps',
         views: {
           meps: {
-            templateUrl: './assets/localjs/meps/list/mepsList.view.html'
+            templateUrl: './assets/localjs/meps/list/mepsList.view.html',
+            controller: 'mepsListController',
+            controllerAs: 'mepsList'
           }
         }
       })
@@ -29,7 +33,9 @@ angular.module('ngContactMep', ['ui.router', 'ngContactMep.homeController'])
         url: '/meps/:id',
         views: {
           meps: {
-            templateUrl: './assets/localjs/meps/mep/mep.view.html'
+            templateUrl: './assets/localjs/meps/mep/mep.view.html',
+            controller: 'mepController',
+            controllerAs: 'mep'
           }
         }
       })
@@ -45,7 +51,9 @@ angular.module('ngContactMep', ['ui.router', 'ngContactMep.homeController'])
         url: '/campaigns',
         views: {
           campaigns: {
-            templateUrl: './assets/localjs/campaigns/list/campaignsList.view.html'
+            templateUrl: './assets/localjs/campaigns/list/campaignsList.view.html',
+            controller: 'campaignsListController',
+            controllerAs: 'campaignsList'
           }
         }
       })
@@ -53,7 +61,9 @@ angular.module('ngContactMep', ['ui.router', 'ngContactMep.homeController'])
         url: '/campaigns/:id',
         views: {
           campaigns: {
-            templateUrl: './assets/localjs/campaigns/campaign/campaign.view.html'
+            templateUrl: './assets/localjs/campaigns/campaign/campaign.view.html',
+            controller: 'campaignController',
+            controllerAs: 'campaign'
           }
         }
       });
