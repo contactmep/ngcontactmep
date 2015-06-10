@@ -35,6 +35,9 @@
   "dependencies": {
     "gulp-jshint": "^1.11.0",
     "gulp-jshint-file-reporter": "0.0.1",
+    "gulp-remote-src": "^0.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.3",
     "gulp-rev": "^4.0.0",
     "jshint-stylish": "^2.0.0"
   }
