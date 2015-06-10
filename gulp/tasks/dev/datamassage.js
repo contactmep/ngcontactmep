@@ -5,8 +5,8 @@ var replace = require('gulp-replace');
 var closingTag = /<\/(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g;
 gulp.task('datamassage', function() {
 
-  remoteSrc(['xml.html'], {
-      base: 'http://www.europarl.europa.eu/meps/en/',
+  remoteSrc(['en/xml.html','fr/xml.html'], {
+      base: 'http://www.europarl.europa.eu/meps/',
     })
     .pipe(replace('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', ''))
     .pipe(replace('<meps>', '['))
@@ -23,5 +23,5 @@ gulp.task('datamassage', function() {
       path.basename = "mepslist";
       path.extname = ".json"
     }))
-    .pipe(gulp.dest('./app/dev/assets/data'));
+    .pipe(gulp.dest('./app/dev/assets/data/meps'));
 })
