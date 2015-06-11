@@ -12,5 +12,4 @@
   "bowerComponents" : "/bower_components",
   "scriptExtension" : ".js",
   "templateExtension" : ".jade"
-  
 }

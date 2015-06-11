@@ -2,11 +2,18 @@ var through = require('through2');
 var _ = require('lodash');
 var gutil = require('gulp-util');
 
-module.exports = function extractFilters(){
+module.exports = function extractMepData(){
 	var pipe = through.obj(function(file, enc, cb) {
 		var lang = file.path.split('\\')[3];
 		var data = JSON.parse(file.contents.toString());
-		var filters = {}
+		var filters = {};
+		_.forEach(data,function(mep){
+			var mepFile = new gutil.File({
+				path: lang + '/mep/' + mep.id + '.json',
+				contents: new Buffer(JSON.stringify(mep))
+			})
+			pipe.push(mepFile);
+		})
 		filters.country = uniqPluck(data,'country');
 		filters.politicalGroup = uniqPluck(data,'politicalGroup')
 		filters.nationalPoliticalGroup = uniqPluck(data,'nationalPoliticalGroup')

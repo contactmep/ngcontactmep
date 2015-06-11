@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var remoteSrc = require('gulp-remote-src');
 var rename = require("gulp-rename");
 var replace = require('gulp-replace');
-var extractFilters = require('../../utilities/extractFilters');
+var extractMepData = require('../../utilities/extractMepData');
 
 var closingTag = /<\/(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g;
 
@@ -34,6 +34,6 @@ gulp.task('datamassage', function() {
       path.basename = "mepslist";
       path.extname = ".json"
     }))
-    .pipe(extractFilters())
+    .pipe(extractMepData())
     .pipe(gulp.dest('./app/dev/assets/data/meps'));
 })
