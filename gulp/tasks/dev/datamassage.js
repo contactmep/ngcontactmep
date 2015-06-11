@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var remoteSrc = require('gulp-remote-src');
 var rename = require("gulp-rename");
 var replace = require('gulp-replace');
+var extractFilters = require('../../utilities/extractFilters');
 
 var closingTag = /<\/(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g;
 
@@ -10,7 +11,7 @@ var langs = ['fr','en','es'];
 var remoteSource = [];
 
 for (lang in langs){
-	remoteSource.push(langs[lang] + '/json/getBodyValues.html')
+	remoteSource.push(langs[lang] + '/xml.html')
 }
 
 gulp.task('datamassage', function() {
@@ -21,7 +22,7 @@ gulp.task('datamassage', function() {
     .pipe(replace('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', ''))
     .pipe(replace('<meps>', '['))
     .pipe(replace('</meps>', ']'))
-    .pipe(replace('<mep>', '{'))
+    .pipe(replace('<mep>', '{"'))
     .pipe(replace('</mep>', '},'))
     .pipe(replace('"', ''))
     .pipe(replace(closingTag, '",'))
@@ -33,5 +34,6 @@ gulp.task('datamassage', function() {
       path.basename = "mepslist";
       path.extname = ".json"
     }))
+    .pipe(extractFilters())
     .pipe(gulp.dest('./app/dev/assets/data/meps'));
 })
