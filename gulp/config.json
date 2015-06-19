@@ -9,6 +9,7 @@
     "dir" : "/localjs",
     "renderTemplates" : ".view"
   },
+  "dataDir" : "/data",
   "bowerComponents" : "/bower_components",
   "scriptExtension" : ".js",
   "templateExtension" : ".jade"
