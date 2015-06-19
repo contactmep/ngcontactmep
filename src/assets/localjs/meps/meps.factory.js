@@ -1,20 +1,27 @@
 angular.module('ngContactMep.mepsFactory',[])
-	.factory('mepsFactory',mepsFactory)
+	.factory('mepsFactory',mepsFactory);
 
-mepsFactory.$inject = ['$http']
+mepsFactory.$inject = ['$http'];
 
 function mepsFactory($http) {
-	var factory;
+	var factory = {};
 
-	factory.getMeps = getMeps;
+	factory.getMepsList = getMepsList;
 	factory.getMep = getMep;
 
 	return factory;
 
-	function getMeps(callback){
-		callback();
-	};
+	function getMepsList(callback){
+		$http.get('assets/data/meps/en/mepslist.json')
+		.success(function (data){
+			callback(data);
+		});
+	}
+
 	function getMep(id,callback){
-		callback();
-	};
+		$http.get('assets/data/meps/en/mep/'+id+'.json')
+		.success(function (data){
+			callback(data);
+		});
+	}
 }
