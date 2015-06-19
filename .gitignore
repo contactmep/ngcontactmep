@@ -4,3 +4,5 @@ jshint-output.log
 bower_components
 app
 .publish/
+*.sublime-workspace
+ngcontactmep.sublime-project
