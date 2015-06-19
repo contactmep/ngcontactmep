@@ -16,7 +16,8 @@ var destination = pathConfig.testBuild.dist
 
 var dataSource = pathConfig.testBuild.dev 
 	+ pathConfig.assets 
-	+ pathConfig.dataDir;
+	+ pathConfig.dataDir
+  + '/**/*.json';
 
 var dataDestination = pathConfig.testBuild.dist 
 	+ pathConfig.assets 
