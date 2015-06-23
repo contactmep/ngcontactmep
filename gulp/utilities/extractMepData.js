@@ -4,6 +4,7 @@ var gutil = require('gulp-util');
 
 module.exports = function extractMepData(){
 	var pipe = through.obj(function(file, enc, cb) {
+		console.log(file.path)
 		var lang = file.path.split('\\')[3];
 		var data = JSON.parse(file.contents.toString());
 		var filters = {};
