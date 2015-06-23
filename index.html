@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="ngContactMep">
+  <head>
+    <title>Contact MeP</title>
+    <link rel="stylesheet" href="assets/css/vendor-d4300e0240.css"/>
+  </head>
+  <body>
+    <md-content layout="column">
+      <md-toolbar class="md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+          <md-button aria-label="Settings" class="md-icon-button">
+            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+          </md-button>
+          <h1>Contact your MePs!</h1><span flex></span>
+          <md-button ui-sref="meps.list">MePs</md-button>
+          <md-button ui-sref="campaigns.list" class="ng-hide">Campaigns</md-button>
+        </div>
+      </md-toolbar>
+      <div ui-view="main" flex layout="column" class="md-whiteframe-z2"></div>
+    </md-content>
+    <script src="assets/js/vendor-0c124d5e49.js"></script>
+    <script src="assets/js/app-287112866e.js"></script>
+  </body>
+</html>

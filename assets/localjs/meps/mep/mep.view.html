@@ -1,0 +1,13 @@
+
+<md-content flex="flex">
+  <p ng-show="mep.loading">Loading...</p>
+  <div layout="row" ng-hide="mep.loading" flex="flex">
+    <div layout="column" flex="33" layout-align="space-around center"><img ng-src="http://www.europarl.europa.eu/mepphoto/{{mep.mepData.id}}.jpg"/></div>
+    <div layout="column" layout-align="space-around center" flex="flex">
+      <h2>{{mep.mepData.fullName}}</h2>
+      <p>{{mep.mepData.country}}</p>
+      <p>{{mep.mepData.politicalGroup}}</p>
+      <p>{{mep.mepData.nationalPoliticalGroup}}</p>
+    </div>
+  </div>
+</md-content>
