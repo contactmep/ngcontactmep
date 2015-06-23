@@ -1,4 +1,8 @@
 extends ../../../../partials/layout/1Col.jade
 block main
-  h2 MeP
-  p(ng-show="mep.scopeConnected") Mep Scope Connected
+  p(ng-show="mep.loading") Loading...
+  div(ng-hide="mep.loading")
+    h2 {{mep.mepData.fullName}}
+    p {{mep.mepData.country}}
+    p {{mep.mepData.politicalGroup}}
+    p {{mep.mepData.nationalPoliticalGroup}}
