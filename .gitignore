@@ -5,4 +5,4 @@ bower_components
 app
 .publish/
 *.sublime-workspace
-ngcontactmep.sublime-project
+*.sublime-project
