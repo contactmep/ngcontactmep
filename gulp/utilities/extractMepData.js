@@ -6,7 +6,6 @@ module.exports = function extractMepData(){
 	var pipe = through.obj(function(file, enc, cb) {
 		var urlSeparator = file.path.charAt(5);
 		var lang = file.path.split(urlSeparator)[3];
-		console.log(lang);
 		var data = JSON.parse(file.contents.toString());
 		var filters = {};
 		_.forEach(data,function(mep){
