@@ -1,9 +1,10 @@
-angular.module('ngContactMep.mepController',[])
+angular.module('ngContactMep.mepController',['ngContactMep.mepsFactory'])
   .controller('mepController', mepController);
 
-mepController.$inject = [];
+mepController.$inject = ['mepsFactory','$stateParams'];
 
-function mepController() {
+function mepController(mepsFactory,$stateParams) {
   var vm = this;
-  vm.scopeConnected = true;
+  vm.loading = true;
+  mepsFactory.getMep($stateParams.id,function(response){vm.mepData=response;vm.loading=false;});
 }

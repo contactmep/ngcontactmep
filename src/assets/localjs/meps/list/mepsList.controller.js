@@ -1,9 +1,10 @@
-angular.module('ngContactMep.mepsListController',[])
+angular.module('ngContactMep.mepsListController',['ngContactMep.mepsFactory'])
   .controller('mepsListController',mepsListController);
 
-mepsListController.$inject = [];
+mepsListController.$inject = ['mepsFactory'];
 
-function mepsListController() {
+function mepsListController(mepsFactory) {
   var vm = this;
-  vm.scopeConnected = true;
+  vm.loading = true;
+  mepsFactory.getMepsList(function(response){vm.mepsList=response;vm.loading=false;});
 }

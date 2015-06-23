@@ -1,6 +1,9 @@
 extends ../../../../partials/layout/2ColLeft.jade
 block left
-  p test
-block main 
-  h2 List
-  p(ng-show="mepsList.scopeConnected") Meps List Scope Connected
+block main
+  p(ng-show="mepsList.loading") Loading...
+  md-grid-list(md-cols-sm="1" md-cols-md="2" md-cols-lg="4" md-cols-gt-lg="5" md-gutter="1em" md-row-height="250px" ng-hide="mepsList.loading")
+    md-grid-tile(ng-repeat="mep in mepsList.mepsList" layout="row")
+      div(layout="column" layout-align="space-around center")
+        img(ng-src="http://www.europarl.europa.eu/mepphoto/{{mep.id}}.jpg")
+        md-button(ui-sref="meps.mep({ id: mep.id })") {{mep.fullName}}
