@@ -1,8 +1,11 @@
 extends ../../../../partials/layout/1Col.jade
 block main
   p(ng-show="mep.loading") Loading...
-  div(ng-hide="mep.loading")
-    h2 {{mep.mepData.fullName}}
-    p {{mep.mepData.country}}
-    p {{mep.mepData.politicalGroup}}
-    p {{mep.mepData.nationalPoliticalGroup}}
+  div(layout="row" ng-hide="mep.loading" flex)
+    div(layout="column" flex="33" layout-align="space-around center")
+      img(ng-src="http://www.europarl.europa.eu/mepphoto/{{mep.mepData.id}}.jpg")
+    div(layout="column" layout-align="space-around center" flex)
+      h2 {{mep.mepData.fullName}}
+      p {{mep.mepData.country}}
+      p {{mep.mepData.politicalGroup}}
+      p {{mep.mepData.nationalPoliticalGroup}}
