@@ -5,7 +5,7 @@ var runSequence = require('run-sequence');
 gulp.task('build:dev', function(callback) {
   runSequence(
     'delete:dev',
-    ['bower','copy:dev','jade','datamassage'],
+    ['bower','copy:dev','jade'],
     'inject',
     callback
   );
