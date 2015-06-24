@@ -6,6 +6,6 @@ block main
       img(ng-src="http://www.europarl.europa.eu/mepphoto/{{mep.mepData.id}}.jpg")
     div(layout="column" layout-align="space-around center" flex)
       h2 {{mep.mepData.fullName}}
-      p {{mep.mepData.country}}
-      p {{mep.mepData.politicalGroup}}
-      p {{mep.mepData.nationalPoliticalGroup}}
+      p {{mep.mepData.countryLabel}}
+      p {{mep.mepData.politicalGroupLabel}}
+      p {{mep.mepData.nationalPoliticalGroupLabel}}
