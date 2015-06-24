@@ -12,14 +12,14 @@ function mepsFactory($http) {
 	return factory;
 
 	function getMepsList(callback){
-		$http.get('assets/data/meps/en/mepslist.json')
+		$http.get('https://raw.githubusercontent.com/contactmep/mepsApi/master/api/mepslist.json')
 		.success(function (data){
 			callback(data);
 		});
 	}
 
 	function getMep(id,callback){
-		$http.get('assets/data/meps/en/mep/'+id+'.json')
+		$http.get('https://raw.githubusercontent.com/contactmep/mepsApi/master/api/meps/'+id+'.json')
 		.success(function (data){
 			callback(data);
 		});
