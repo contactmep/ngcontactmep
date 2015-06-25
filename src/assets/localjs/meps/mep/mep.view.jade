@@ -4,8 +4,18 @@ block main
   div(layout="row" ng-hide="mep.loading" flex)
     div(layout="column" flex="33" layout-align="space-around center")
       img(ng-src="http://www.europarl.europa.eu/mepphoto/{{mep.mepData.id}}.jpg")
-    div(layout="column" layout-align="space-around center" flex)
       h2 {{mep.mepData.fullName}}
-      p {{mep.mepData.countryLabel}}
-      p {{mep.mepData.politicalGroupLabel}}
+      a(ng-href="{{mep.mepData.webPage}}") {{mep.mepData.webPage}}
+      div(layout="row" layout-align="space-between center")
+        img(flex-sm flex-gt-sm="15" ng-src="{{mep.mepData.countryFlag}}")
+        p(flex hide-sm) {{mep.mepData.countryLabel}}
+      div(layout="row" layout-align="space-between center")
+        img(flex-sm flex-gt-sm="10" ng-src="{{mep.mepData.politicalGroupIcon}}")
+        p(flex hide-sm) {{mep.mepData.politicalGroupLabel}}
       p {{mep.mepData.nationalPoliticalGroupLabel}}
+      h3 Contact
+      div(layout-sm="column" layout-gt-sm="row" layout-align="space-between center")
+        md-button(ng-show="mep.mepData.email" ng-href="mailto:{{mep.mepData.email}}" class="md-raised") E-mail
+        md-button(ng-show="mep.mepData.twitterProfile" ng-href="https://twitter.com/intent/tweet?screen_name={{mep.mepData.twitterProfile}}" target="_blank" class="md-raised") Twitter
+        md-button(ng-show="mep.mepData.facebookPageUrl" ng-href="{{mep.mepData.facebookPageUrl}}" target="_blank" class="md-raised") Facebook
+    div(layout="column" layout-align="center center" flex)
